@@ -6,16 +6,15 @@ import java.util.ArrayList;
 
 public class Window extends JFrame{
 
-    Canvas panel;
+    private Canvas panel;
 
-
-    public Window(int width, int height){
+    public Window(int width, int height, Color background){
         super();
         this.setSize(width,height);
 
         panel = new Canvas(width,height);
         panel.setSize(width,height);
-        panel.setBackground(Color.white);
+        panel.setBackground(background);
         this.getContentPane().add(panel);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,7 +22,7 @@ public class Window extends JFrame{
     }
 
     public Window(){
-        this(400,400);
+        this(400,400,Color.white);
     }
 
     public void addDrawable(Drawable d){
@@ -32,5 +31,9 @@ public class Window extends JFrame{
 
     public void removeDrawable(Drawable d){
         panel.getDrawables().remove(d);
+    }
+
+    public void setBackgroundColor(Color color){
+        panel.setBackground(color);
     }
 }
