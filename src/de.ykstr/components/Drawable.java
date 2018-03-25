@@ -1,4 +1,4 @@
-package de.ykstr;
+package de.ykstr.components;
 
 import java.awt.*;
 
